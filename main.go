@@ -18,23 +18,19 @@ func main() {
 
 	// GET /current — вызывает Value() и возвращает JSON { "value": <число> };
 	r.GET("/current", func (c *gin.Context) {
-		val := Value()
-		c.JSON(200, gin.H{"Value": val})
+		c.JSON(200, gin.H{"value": Value()})
 	})
 
 	r.GET("/increment", func (c *gin.Context) {
-		val := Inc1()
-		c.JSON(200, gin.H{"Value": val})
+		c.JSON(200, gin.H{"value": Inc1()})
 	})
 
 	r.GET("/decrement", func (c *gin.Context) {
-		val := Dec1()
-		c.JSON(200, gin.H{"Value": val})
+		c.JSON(200, gin.H{"value": Dec1()})
 	})
 
 	r.GET("/reset", func (c *gin.Context) {
-		val := Reset()
-		c.JSON(200, gin.H{"Value": val})
+		c.JSON(200, gin.H{"value": Reset()})
 	})
 
 	r.GET("/add", func(c *gin.Context) {
